@@ -6,4 +6,30 @@
   <packaging>war</packaging>
   <name>ci</name>
   <description>ci</description>
+  <profiles>
+    <profile>
+      <id>sonar</id> 
+      <activation>
+      <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+      	<!-- Example for MySQL-->
+        <sonar.jdbc.url>
+                  jdbc:mysql://192.168.1.60:3306/sonar_db?useUnicode=true&amp;characterEncoding=utf8
+                </sonar.jdbc.url>
+                <sonar.jdbc.username>sonar</sonar.jdbc.username>
+                <sonar.jdbc.password>sonar</sonar.jdbc.password>
+<sonar.scm.provider>git</sonar.scm.provider>
+ 
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  http://localhost:9000
+                </sonar.host.url>
+        
+      </properties>
+    </profile>
+  </profiles>
+  <build>
+  
+  </build>
 </project>
